@@ -1,0 +1,131 @@
+/* 支付结果页面样式 */
+.result-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 120rpx;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+/* 结果图标 */
+.result-icon {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40rpx;
+}
+
+.result-icon.success {
+  background-color: rgba(7, 193, 96, 0.2);
+}
+
+.result-icon.success icon {
+  color: #07C160;
+}
+
+.result-icon.fail {
+  background-color: rgba(255, 77, 79, 0.2);
+}
+
+.result-icon.fail icon {
+  color: #ff4d4f;
+}
+
+/* 结果信息 */
+.result-title {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20rpx;
+}
+
+.result-desc {
+  font-size: 28rpx;
+  color: #666;
+  margin-bottom: 80rpx;
+}
+
+/* 订单信息 */
+.order-info {
+  width: 90%;
+  background-color: #fff;
+  border-radius: 10rpx;
+  padding: 30rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0,0,0,0.05);
+  margin-bottom: 80rpx;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 15rpx 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.info-item:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  font-size: 28rpx;
+  color: #666;
+}
+
+.info-value {
+  font-size: 28rpx;
+  color: #333;
+  font-weight: 500;
+}
+
+/* 操作按钮 */
+.action-buttons {
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  gap: 20rpx;
+}
+
+.action-btn {
+  flex: 1;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 32rpx;
+  border-radius: 10rpx;
+}
+
+.back-btn {
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #eee;
+}
+
+.detail-btn {
+  background-color: #a79b9b;
+  color: #fff;
+}
+
+/* 高光按钮样式 */
+.highlight-btn {
+  background: linear-gradient(
+    135deg, 
+    rgba(255,255,255,0.2) 0%, 
+    rgba(255,255,255,0) 50%
+  ), #c7a0a1;
+  
+  box-shadow: 
+    0 2rpx 8rpx rgba(255,77,79,0.3),
+    inset 0 1rpx 2rpx rgba(255,255,255,0.2);
+  transition: all 0.2s ease;
+}
+
+.highlight-btn:active {
+  background-color: #f5222d;
+  box-shadow: 
+    0 1rpx 4rpx rgba(255,77,79,0.4),
+    inset 0 1rpx 2rpx rgba(0,0,0,0.1);
+  transform: translateY(1rpx);
+}

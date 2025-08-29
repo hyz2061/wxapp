@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/userCenter/userCenter",
+    "pages/logs/logs",
+    "pages/payment/payment",
+    "pages/orderDetail/orderDetail",
+    "pages/refundApply/refundApply",
+    "pages/paymentResult/paymentResult",
+    "pages/Service/Service",
+    "pages/my/my"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarBackgroundColor": "#ffffff"
+  },
+  "style": "v2",
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "tabBar": {
+    "color": "#333333",
+    "selectedColor": "#1aad19",
+    "backgroundColor": "#ffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "社区"
+      },
+      {
+        "pagePath": "pages/Service/Service",
+        "text": "服务"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的"
+      }
+    ]
+  }
+}

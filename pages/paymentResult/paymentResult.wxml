@@ -1,0 +1,40 @@
+<!-- 支付结果页面 -->
+<view class="result-container">
+  <!-- 结果图标 -->
+  <view class="result-icon {{success ? 'success' : 'fail'}}">
+    <icon type="{{success ? 'success' : 'warn'}}" size="120rpx"></icon>
+  </view>
+
+  <!-- 结果信息 -->
+  <view class="result-title">{{success ? '支付成功' : '支付失败'}}</view>
+  
+  <view class="result-desc">
+    {{success ? '您的订单已支付成功' : '支付过程中出现问题，请重试'}}
+  </view>
+
+  <!-- 订单信息 -->
+  <view class="order-info">
+    <view class="info-item">
+      <view class="info-label">订单号</view>
+      <view class="info-value">{{orderNo}}</view>
+    </view>
+    <view class="info-item">
+      <view class="info-label">支付金额</view>
+      <view class="info-value">¥{{amount.toFixed(2)}}</view>
+    </view>
+    <view class="info-item" wx:if="{{success}}">
+      <view class="info-label">支付时间</view>
+      <view class="info-value">{{payTime}}</view>
+    </view>
+  </view>
+
+  <!-- 操作按钮 -->
+  <view class="action-buttons">
+    <button class="action-btn back-btn" bindtap="goBack">
+      返回订单列表
+    </button>
+    <button class="action-btn detail-btn highlight-btn" bindtap="goToDetail">
+      {{success ? '查看订单详情' : '重新支付'}}
+    </button>
+  </view>
+</view>

@@ -1,0 +1,91 @@
+<!-- 用户中心页面 -->
+<view class="user-center">
+  <!-- 头部信息 -->
+  <view class="user-header">
+    <view class="user-avatar">
+      <image class="avatar-img" src="/images/first-try.jpg" mode="widthFix" alt="用户头像"></image>
+    </view>
+    <view class="user-info">
+      <!-- 替换为用户名，点击跳转详情 -->
+      <view class="user-name" bindtap="goToUserDetail">
+        {{userName || '点击登录'}}
+      </view>
+      <view class="user-status">普通会员</view>
+    </view>
+  </view>
+  <view class="order-manage">订单管理</view>
+
+  <!-- 订单状态导航（保持不变） -->
+  <view class="order-status-tabs">
+      <view class="status-tab {{currentTab === 0 ? 'active' : ''}}" bindtap="switchTab" data-index="0">
+        <button class="tab-btn">全部</button>
+      </view>
+      <view class="status-tab {{currentTab === 1 ? 'active' : ''}}" bindtap="switchTab" data-index="1">
+        <button class="tab-btn">待支付</button>
+       </view>
+      <view class="status-tab {{currentTab === 2 ? 'active' : ''}}" bindtap="switchTab" data-index="2">
+        <button class="tab-btn">已完成</button>
+      </view>
+  </view>
+
+  <!-- 订单列表展示区域（保持不变） -->
+  <view class="order-list">
+    <!-- 加载中提示 -->
+    <view wx:if="{{loading}}" class="loading-tip">加载中...</view>
+    
+    <!-- 非加载状态 -->
+    <view wx:else>
+      <!-- 循环渲染订单 -->
+      <view wx:for="{{orders}}" wx:key="orderNo" class="order-item">
+        <view class="order-info">
+          <view class="order-number">订单号: {{item.orderNo}}</view>
+          <view class="order-status {{item.status === 'unpaid' ? 'status-unpaid' : 'status-normal'}}">
+            {{item.status === 'unpaid' ? '待支付' : '已完成'}}
+          </view>
+        </view>
+        
+        <view class="order-amount">金额: ¥{{item.amount.toFixed(2)}}</view>
+        <view class="order-time">创建时间: {{item.createTime}}</view>
+        
+        <!-- 订单操作按钮容器 -->
+        <view class="order-actions">
+          <!-- 待支付订单显示支付按钮 -->
+          <button 
+            wx:if="{{item.status === 'unpaid'}}" 
+            class="pay-btn" 
+            bindtap="goToPayment" 
+            data-order-no="{{item.orderNo}}">
+            去支付
+          </button>
+          
+          <!-- 删除订单按钮 - 所有状态都可删除 -->
+          <button 
+            class="delete-btn" 
+            bindtap="showDeleteConfirm" 
+            data-order-no="{{item.orderNo}}">
+            删除订单
+          </button>
+        </view>
+      </view>
+      
+      <!-- 空状态提示 -->
+      <view wx:if="{{orders.length === 0}}" class="empty-tip">
+        暂无相关订单
+      </view>
+    </view>
+  </view>
+
+  <!-- 删除确认弹窗（保持不变） -->
+  <view class="modal-mask" wx:if="{{showDeleteModal}}">
+    <view class="modal-container">
+      <view class="modal-title">确认删除</view>
+      <view class="modal-content">
+        确定要删除该订单吗？此操作不可撤销。
+      </view>
+      <view class="modal-buttons">
+        <button class="modal-btn cancel-btn" bindtap="cancelDelete">取消</button>
+        <button class="modal-btn confirm-btn" bindtap="confirmDelete">确认删除</button>
+      </view>
+    </view>
+  </view>
+</view>

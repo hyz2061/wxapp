@@ -1,0 +1,176 @@
+.user-center {
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+/* 头部信息样式 */
+.user-header {
+  background-color: #fff;
+  padding: 50rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.user-avatar image {
+  width: 180rpx; /* 宽高设置为相同值 */
+  height: 180rpx;
+  border-radius: 50%; /* 50% 确保完全圆形 */
+  margin-right: 80rpx;
+}
+.user-name {
+  font-size: 34rpx;
+  margin-bottom: 15rpx;
+}
+
+.user-actions button {
+  background-color: #bda8a8;
+  color: white;
+  font-size: 28rpx;
+  padding: 10rpx 25rpx;
+  border-radius: 10rpx;
+}
+
+/* 订单状态标签容器 */
+.order-status-tabs {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #eee;
+  background-color: #fff;
+}
+
+/* 单个标签样式 */
+.status-tab {
+  flex: 1;
+  text-align: center;
+  height: 90rpx;
+  line-height: 80rpx;
+}
+
+/* 标签内按钮样式 */
+.status-tab button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-size: 32rpx;
+  color: #333;
+  height: 100%;
+  width: 100%;
+}
+
+/* 选中标签样式 */
+.status-tab.active button {
+  color: #ff4d4f;
+  border-bottom: 2px solid #ff4d4f;
+  padding-bottom: 4rpx;
+  font-weight: bold;
+}
+
+/* 按钮点击反馈 */
+.status-btn:active {
+  opacity: 0.8;
+  background-color: #f5222d; 
+  box-shadow: 
+    0 1rpx 4rpx rgba(255,77,79,0.4),
+    inset 0 1rpx 2rpx rgba(0,0,0,0.1); 
+  transform: translateY(1rpx); 
+}
+
+/* 订单列表样式 */
+.order-list {
+  padding: 20rpx;
+}
+
+/* 订单项样式 */
+.order-item {
+  background-color: #fff;
+  border-radius: 10rpx;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
+}
+.delete-btn{
+  margin-top: 10rpx;
+  background-color: #a18585;
+  color: white;
+  font-size: 26rpx;
+  padding: 8rpx 20rpx;
+  border-radius: 10rpx;
+
+}
+.user-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8px;
+  cursor: pointer; /* 显示手型指针 */
+}
+.user-name:active {
+  color: #07c160; /* 点击时变色 */
+}
+
+/* 订单信息行 */
+.order-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15rpx;
+}
+
+/* 订单号样式 */
+.order-number {
+  font-size: 28rpx;
+  color: #666;
+}
+
+/* 订单状态样式 */
+.order-status {
+  font-size: 28rpx;
+}
+
+/* 待支付状态样式 */
+.status-unpaid {
+  color: #ff4d4f;
+}
+
+/* 普通状态样式 */
+.status-normal {
+  color: #52c41a;
+}
+
+/* 订单金额和时间样式 */
+.order-amount, .order-time {
+  font-size: 26rpx;
+  color: #666;
+  margin-bottom: 10rpx;
+}
+
+/* 支付按钮样式 */
+.pay-btn {
+  margin-top: 10rpx;
+  background-color: #a18585;
+  color: white;
+  font-size: 26rpx;
+  padding: 8rpx 20rpx;
+  border-radius: 10rpx;
+}
+
+/* 加载提示样式 */
+.loading-tip {
+  text-align: center;
+  padding: 40rpx;
+  color: #999;
+  font-size: 28rpx;
+}
+
+/* 空状态提示样式 */
+.empty-tip {
+  text-align: center;
+  padding: 80rpx 20rpx;
+  color: #999;
+  font-size: 28rpx;
+}
+.order-manage{
+  text-align: center;
+  font-size: larger;
+}

@@ -1,0 +1,91 @@
+<!--pages/orderDetail/orderDetail.wxml-->
+<view class="order-detail-page">
+  <!-- 顶部导航栏 -->
+  <view class="nav-bar">
+    <view class="nav-title">订单详情</view>
+  </view>
+
+  <!-- 订单状态卡片 -->
+  <view class="order-status-card">
+    <view class="status-text {{statusStyle}}">
+      {{orderStatusText}}
+    </view>
+    <view class="status-desc" wx:if="{{orderStatus === 'unpaid'}}">
+      请在 {{payExpireTime}} 前完成支付，否则订单将自动取消
+    </view>
+    <view class="status-desc" wx:if="{{orderStatus === 'shipped'}}">
+      商品已发出，物流单号：{{logisticsNo}}
+    </view>
+  </view>
+
+  <!-- 订单基本信息 -->
+  <view class="order-base-info">
+    <view class="info-item">
+      <view class="info-label">订单编号</view>
+      <view class="info-value">{{orderNo}}</view>
+    </view>
+    <view class="info-item">
+      <view class="info-label">创建时间</view>
+      <view class="info-value">{{createTime}}</view>
+    </view>
+    <view class="info-item">
+      <view class="info-label">支付方式</view>
+      <view class="info-value">{{payMethod || '未支付'}}</view>
+    </view>
+  </view>
+
+  <!-- 商品列表 -->
+  <view class="goods-list-title">商品信息</view>
+  <view class="goods-list">
+    <view wx:for="{{goodsList}}" wx:key="goodsId" class="goods-item">
+      <image class="goods-img" src="{{item.goodsImg}}" mode="widthFix"></image>
+      <view class="goods-info">
+        <view class="goods-name">{{item.goodsName}}</view>
+        <view class="goods-spec">{{item.spec}}</view>
+        <view class="goods-price">¥{{item.price.toFixed(2)}}</view>
+      </view>
+      <view class="goods-count">x{{item.quantity}}</view>
+    </view>
+  </view>
+
+  <!-- 收货信息 -->
+  <view class="recipient-title">收货信息</view>
+  <view class="recipient-info">
+    <view class="recipient-name">{{recipientName}} {{recipientPhone}}</view>
+    <view class="recipient-address">{{recipientAddress}}</view>
+  </view>
+
+  <!-- 金额信息 -->
+  <view class="amount-info">
+    <view class="amount-item">
+      <view class="amount-label">商品总价</view>
+      <view class="amount-value">¥{{goodsTotal.toFixed(2)}}</view>
+    </view>
+    <view class="amount-item">
+      <view class="amount-label">运费</view>
+      <view class="amount-value">¥{{freight.toFixed(2)}}</view>
+    </view>
+    <view class="amount-item total-amount">
+      <view class="amount-label">实付金额</view>
+      <view class="amount-value">¥{{payAmount.toFixed(2)}}</view>
+    </view>
+  </view>
+
+  <!-- 操作按钮区 -->
+  <view class="operation-btns" wx:if="{{orderStatus === 'unpaid'}}">
+    <button class="btn cancel-btn" bindtap="cancelOrder">取消订单</button>
+    <button class="btn pay-btn" bindtap="goToPayment">去支付</button>
+  </view>
+
+  <view class="operation-btns" wx:if="{{orderStatus === 'shipped'}}">
+    <button class="btn confirm-btn" bindtap="confirmReceipt">确认收货</button>
+    <button class="btn logistics-btn" bindtap="viewLogistics">查看物流</button>
+  </view>
+
+  <view class="operation-btns" wx:if="{{orderStatus === 'completed'}}">
+    <button class="btn delete-btn" bindtap="deleteOrder">删除订单</button>
+  </view>
+
+  <!-- 加载中 -->
+  <view class="loading-tip" wx:if="{{loading}}">加载中...</view>
+</view>

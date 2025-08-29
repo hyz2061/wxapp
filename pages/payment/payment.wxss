@@ -1,0 +1,185 @@
+/* 支付页面样式 */
+.payment-container {
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+/* 导航栏 */
+.nav-bar {
+  display: flex;
+  align-items: center;
+  height: 100rpx;
+  padding: 0 20rpx;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.nav-back {
+  width: 60rpx;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-title {
+  flex: 1;
+  text-align: center;
+  font-size: 36rpx;
+  font-weight: 500;
+  color: #333;
+}
+
+/* 订单信息卡片 */
+.order-card {
+  background-color: #fff;
+  margin: 20rpx;
+  border-radius: 10rpx;
+  padding: 30rpx 20rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0,0,0,0.05);
+}
+
+.order-title {
+  font-size: 32rpx;
+  color: #333;
+  margin-bottom: 20rpx;
+  padding-bottom: 15rpx;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.order-detail {
+  margin-bottom: 30rpx;
+}
+
+.order-no, .order-time {
+  font-size: 28rpx;
+  color: #666;
+  margin-bottom: 15rpx;
+}
+
+.amount-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.amount-label {
+  font-size: 30rpx;
+  color: #666;
+}
+
+.amount-value {
+  font-size: 40rpx;
+  color: #ff4d4f;
+  font-weight: bold;
+}
+
+/* 支付方式选择 */
+.payment-methods {
+  background-color: #fff;
+  margin: 20rpx;
+  border-radius: 10rpx;
+  padding: 20rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0,0,0,0.05);
+}
+
+.section-title {
+  font-size: 30rpx;
+  color: #333;
+  margin-bottom: 20rpx;
+  padding-left: 5rpx;
+}
+
+.method-item {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 5rpx;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.method-item:last-child {
+  border-bottom: none;
+}
+
+.method-item.selected {
+  background-color: rgba(7, 193, 96, 0.05);
+}
+
+.method-icon image {
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 20rpx;
+}
+
+.method-name {
+  flex: 1;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.method-check {
+  width: 50rpx;
+  height: 50rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 底部支付按钮 */
+.pay-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx 30rpx;
+  background-color: #fff;
+  border-top: 1px solid #eee;
+  height: 120rpx;
+  box-sizing: border-box;
+}
+
+.total-amount {
+  font-size: 28rpx;
+  color: #666;
+}
+
+.total-amount .amount {
+  font-size: 36rpx;
+  color: #5f2d2e;
+  font-weight: bold;
+}
+
+.pay-button {
+  width: 240rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  border-radius: 40rpx;
+  background-color: #8d7d7d;
+  color: #fff;
+}
+
+/* 高光按钮样式 */
+.highlight-btn {
+  background: linear-gradient(
+    135deg, 
+    rgba(255,255,255,0.2) 0%, 
+    rgba(255,255,255,0) 50%
+  ), #cfbaba;
+  
+  box-shadow: 
+    0 2rpx 8rpx rgba(255,77,79,0.3),
+    inset 0 1rpx 2rpx rgba(255,255,255,0.2);
+  transition: all 0.2s ease;
+}
+
+.highlight-btn:active {
+  background-color: #f7676e;
+  box-shadow: 
+    0 1rpx 4rpx rgba(255,77,79,0.4),
+    inset 0 1rpx 2rpx rgba(0,0,0,0.1);
+  transform: translateY(1rpx);
+}

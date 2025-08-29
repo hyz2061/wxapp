@@ -1,0 +1,60 @@
+<!--pages/payment/payment.wxml-->
+<!--pages/paymentResult/paymentResult.wxml-->
+<!-- 支付页面 -->
+<view class="payment-container">
+  <!-- 顶部导航 -->
+  <view class="nav-bar">
+    <view class="nav-back" bindtap="goBack">
+      <icon type="left" size="36rpx" color="#333"></icon>
+    </view>
+    <view class="nav-title">确认支付</view>
+  </view>
+
+  <!-- 订单信息卡片 -->
+  <view class="order-card">
+    <view class="order-title">订单信息</view>
+    <view class="order-detail">
+      <view class="order-no">订单号: {{orderNo}}</view>
+      <view class="order-time">创建时间: {{createTime}}</view>
+    </view>
+    <view class="amount-container">
+      <view class="amount-label">支付金额</view>
+      <view class="amount-value">¥{{amount.toFixed(2)}}</view>
+    </view>
+  </view>
+
+  <!-- 支付方式选择 -->
+  <view class="payment-methods">
+    <view class="section-title">选择支付方式</view>
+    
+    <view class="method-item {{selectedMethod === 'wechat' ? 'selected' : ''}}" bindtap="selectMethod" data-method="wechat">
+      <view class="method-icon">
+        <image src="/images/first-try.png" mode="widthFix"></image>
+      </view>
+      <view class="method-name">微信支付</view>
+      <view class="method-check" wx:if="{{selectedMethod === 'wechat'}}">
+        <icon type="success" size="36rpx" color="#07C160"></icon>
+      </view>
+    </view>
+    
+    <view class="method-item {{selectedMethod === 'alipay' ? 'selected' : ''}}" bindtap="selectMethod" data-method="alipay">
+      <view class="method-icon">
+        <image src="/images/alipay.png" mode="widthFix"></image>
+      </view>
+      <view class="method-name">支付宝</view>
+      <view class="method-check" wx:if="{{selectedMethod === 'alipay'}}">
+        <icon type="success" size="36rpx" color="#07C160"></icon>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部支付按钮 -->
+  <view class="pay-footer">
+    <view class="total-amount">
+      合计: <text class="amount">¥{{amount.toFixed(2)}}</text>
+    </view>
+    <button class="pay-button highlight-btn" bindtap="confirmPayment">
+      确认支付
+    </button>
+  </view>
+</view>
