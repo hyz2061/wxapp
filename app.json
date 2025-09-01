@@ -1,13 +1,12 @@
 {
   "pages": [
-    "pages/userCenter/userCenter",
-    "pages/logs/logs",
-    "pages/payment/payment",
-    "pages/orderDetail/orderDetail",
-    "pages/refundApply/refundApply",
-    "pages/paymentResult/paymentResult",
+    "pages/index/index",
+    "pages/Community/Community",
     "pages/Service/Service",
     "pages/my/my"
+
+    
+    
   ],
   "window": {
     "navigationBarTextStyle": "black",
@@ -21,21 +20,38 @@
   "tabBar": {
     "color": "#333333",
     "selectedColor": "#1aad19",
-    "backgroundColor": "#ffff",
+    "backgroundColor": "#ffffff",
     "borderStyle": "black",
     "list": [
       {
-        "pagePath": "pages/logs/logs",
-        "text": "社区"
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/transparent.png",
+        "selectedIconPath": "images/transparent.png"
       },
       {
+        "pagePath": "pages/Community/Community",
+        "text": "社区",
+        "iconPath": "images/transparent.png",
+        "selectedIconPath": "images/transparent.png"
+      },
+      
+      {
         "pagePath": "pages/Service/Service",
-        "text": "服务"
+        "text": "服务",
+        "iconPath": "images/transparent.png",
+        "selectedIconPath": "images/transparent.png"
       },
       {
         "pagePath": "pages/my/my",
-        "text": "我的"
+        "text": "我的",
+        "iconPath": "images/transparent.png",
+        "selectedIconPath": "images/transparent.png"
       }
     ]
   }
+  
 }
+
+
+  
