@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/Community/Community",
     "pages/Service/Service",
     "pages/my/my"
@@ -23,12 +22,7 @@
     "backgroundColor": "#ffffff",
     "borderStyle": "black",
     "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "首页",
-        "iconPath": "images/transparent.png",
-        "selectedIconPath": "images/transparent.png"
-      },
+
       {
         "pagePath": "pages/Community/Community",
         "text": "社区",
