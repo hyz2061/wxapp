@@ -1,18 +1,29 @@
 // pages/Community/Community.js
+<<<<<<< HEAD
 import http from "../../utils/http"
 
+=======
+>>>>>>> f0a983e827ab93ae82d3e92ab88a0237a19a7f58
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+<<<<<<< HEAD
+=======
+
+>>>>>>> f0a983e827ab93ae82d3e92ab88a0237a19a7f58
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+<<<<<<< HEAD
+=======
+
+>>>>>>> f0a983e827ab93ae82d3e92ab88a0237a19a7f58
   },
 
   /**

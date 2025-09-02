@@ -22,7 +22,11 @@
     "backgroundColor": "#ffffff",
     "borderStyle": "black",
     "list": [
+<<<<<<< HEAD
 
+=======
+      
+>>>>>>> f0a983e827ab93ae82d3e92ab88a0237a19a7f58
       {
         "pagePath": "pages/Community/Community",
         "text": "社区",
