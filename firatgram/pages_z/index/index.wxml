@@ -1,0 +1,28 @@
+<view class="container">
+  <!-- 顶部搜索栏 -->
+  <view class="top-bar">
+    <view class="search-wrapper">
+     
+      <input class="search-input" placeholder="搜索你想要的内容" bindinput="onSearchInput" />
+    </view>
+    
+  </view>
+
+  <!-- 第一组轮播图 -->
+  <swiper class="swiper" autoplay interval="3000" circular indicator-dots indicator-active-color="#ff6600">
+    <block wx:for="{{swiperImages}}" wx:key="index">
+      <swiper-item>
+        <image src="{{item}}" class="swiper-image" mode="aspectFill"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <!-- 第二组轮播图 -->
+  <swiper class="swiper" autoplay interval="3000" circular indicator-dots indicator-active-color="#ff6600">
+    <block wx:for="{{swiperImages2}}" wx:key="index">
+      <swiper-item>
+        <image src="{{item}}" class="swiper-image" mode="aspectFill"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
