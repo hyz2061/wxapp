@@ -1,0 +1,43 @@
+<!-- 宠物信息展示区域 -->
+<view class="pet-info-section">
+  <view class="pet-avatar">
+    <image src="https://c-ssl.duitang.com/uploads/blog/202402/22/0GSywXn6C0qvXvV.jpg" mode="aspectFill"></image>
+  </view>
+  <view class="pet-basic-info">
+    <text class="nickname">{{pet.nickname}}</text>
+    <text class="age">年龄：{{pet.age}}岁</text>
+  </view>
+</view>
+
+<!-- 健康记录管理区域 -->
+<view class="health-record-section">
+  <view class="section-title">健康记录</view>
+  <view class="health-record-list" wx:for="{{healthRecords}}" wx:key="index">
+    <text>{{item.time}} - {{item.type}}</text>
+  </view>
+  <button bindtap="addHealthRecord">添加健康记录</button>
+</view>
+
+<!-- 收藏夹区域 -->
+<view class="collection-section">
+  <view class="section-title">我的收藏</view>
+  <view class="collection-list" wx:for="{{collections}}" wx:key="index">
+    <view class="collection-item" wx:if="{{item.isOnShelf}}">
+      <text>{{item.name}}</text>
+    </view>
+    <view class="collection-item mask" wx:else>
+      <text>{{item.name}}（已下架）</text>
+    </view>
+    <button bindtap="deleteCollection" data-id="{{item.id}}">删除</button>
+  </view>
+  <button bindtap="batchDeleteCollection">批量删除</button>
+</view>
+
+<!-- 设置区域 -->
+<view class="setting-section">
+  <view class="section-title">设置</view>
+  <view class="notification-switch">
+    <text>消息通知</text>
+    <switch checked="{{notificationIsOpen}}" bindchange="toggleNotification"></switch>
+  </view>
+</view>

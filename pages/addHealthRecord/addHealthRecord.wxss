@@ -1,0 +1,33 @@
+.add-health-record {
+  padding: 30rpx;
+  background-color: #fff;
+  min-height: 100vh;
+}
+
+.form-item {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #eee;
+}
+
+label {
+  width: 160rpx;
+  font-size: 32rpx;
+  color: #333;
+}
+
+.picker {
+  flex: 1;
+  font-size: 32rpx;
+  color: #666;
+  padding: 10rpx 0;
+}
+
+.submit-btn {
+  margin-top: 50rpx;
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 34rpx;
+}

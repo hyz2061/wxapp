@@ -1,0 +1,26 @@
+<view class="add-health-record">
+  <form bindsubmit="formSubmit">
+    <!-- 记录类型选择器 -->
+    <view class="form-item">
+      <label>记录类型：</label>
+      <picker name="type" range="{{types}}" bindchange="bindTypeChange">
+        <view class="picker">
+          {{types[index]}}
+        </view>
+      </picker>
+    </view>
+
+    <!-- 时间选择器 -->
+    <view class="form-item">
+      <label>记录时间：</label>
+      <picker mode="date" name="time" value="{{time}}" bindchange="bindDateChange">
+        <view class="picker">
+          {{time}}
+        </view>
+      </picker>
+    </view>
+
+    <!-- 提交按钮 -->
+    <button form-type="submit" class="submit-btn">保存记录</button>
+  </form>
+</view>
